@@ -20,12 +20,12 @@ app.get('/', function(req, res) {
 
 app.get('/api/token/:token_id', function(req, res) {
   const tokenId = parseInt("req.params.token_id").toString()
-  const tokenIdInt = parseInt("req.params.token_id")
+  const tokenIdInt = Number(tokenId)
   const person = db["0"]
   const data = {
     'name': tokenId,
     'attributes': {
-      'Avatar': tokenId
+      'Avatar': tokenIdInt
     },
     'image': `${person.imgurl}`
   }
