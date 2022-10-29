@@ -20,7 +20,7 @@ app.get('/', function(req, res) {
 
 app.get('/api/token/:token_id', function(req, res) {
   const tokenId = parseInt("req.params.token_id").toString()
-  const tokenIdInt = Number(tokenId)
+  const tokenIdInt = parseInt(tokenId)
   const person = db["0"]
   const data = {
     'name': tokenId,
